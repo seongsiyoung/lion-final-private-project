@@ -7,6 +7,7 @@ export default function TmiForm({ onCreate }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!content.trim()) return;
 
     await onCreate(content);
