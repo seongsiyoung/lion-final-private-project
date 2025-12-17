@@ -35,6 +35,7 @@ public class TmiController {
         return ResponseEntity.ok(tmi);
     }
 
+    //test용
     @GetMapping("/test")
     public ResponseEntity<String> test() {
         return ResponseEntity.ok("cicd test");
