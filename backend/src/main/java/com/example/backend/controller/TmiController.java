@@ -34,4 +34,9 @@ public class TmiController {
         Tmi tmi = tmiService.createTmi(request.getContent());
         return ResponseEntity.ok(tmi);
     }
+
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok("cicd test");
+    }
 }
