@@ -4,6 +4,7 @@ services:
     container_name: tmi-mysql
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./backend/db:/docker-entrypoint-initdb.d
     ports:
       - "3307:3306"
     healthcheck:
