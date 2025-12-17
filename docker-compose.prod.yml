@@ -38,6 +38,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile.prod
+      args:
+        NEXT_PUBLIC_API_BASE_URL: http://15.165.160.251:8080/api
     container_name: tmi-frontend
     ports:
       - "3000:3000"
