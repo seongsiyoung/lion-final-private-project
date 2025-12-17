@@ -22,9 +22,7 @@ services:
       - ./backend/.env.prod
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile.prod
+    image: DOCKERHUB_USERNAME/tmi-backend:latest
     container_name: tmi-backend
     ports:
       - "8080:8080"
@@ -38,11 +36,7 @@ services:
       - ./backend/.env.prod
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.prod
-      args:
-        NEXT_PUBLIC_API_BASE_URL: http://15.165.160.251:8080/api
+    image: DOCKERHUB_USERNAME/tmi-frontend:latest
     container_name: tmi-frontend
     environment:
       TZ: Asia/Seoul
