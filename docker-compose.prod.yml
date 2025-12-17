@@ -22,7 +22,7 @@ services:
       - ./backend/.env.prod
 
   backend:
-    image: DOCKERHUB_USERNAME/tmi-backend:latest
+    image: seongsiyeong/tmi-backend:latest
     container_name: tmi-backend
     ports:
       - "8080:8080"
@@ -36,7 +36,7 @@ services:
       - ./backend/.env.prod
 
   frontend:
-    image: DOCKERHUB_USERNAME/tmi-frontend:latest
+    image: seongsiyeong/tmi-frontend:latest
     container_name: tmi-frontend
     environment:
       TZ: Asia/Seoul
