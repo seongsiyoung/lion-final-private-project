@@ -29,7 +29,7 @@ export default function HomePage() {
       <div className="max-w-xl mx-auto bg-white p-6 rounded shadow">
         <h1 className="text-2xl font-bold mb-4">오늘의 TMI</h1>
 
-        {/* 등록 폼 */}
+        {/* TMI 등록 폼 */}
         <TmiForm onCreate={handleCreate} />
 
         {/* TMI 목록 */}
