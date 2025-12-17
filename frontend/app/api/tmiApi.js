@@ -14,7 +14,7 @@ export async function fetchTmis() {
 
 export async function createTmi(content) {
   try {
-    const res = await axios.post(`${API_BASE_URL}/tmis`, { content });
+    const res = await axios.post(`${API_BASE_URL}/tmi`, { content });
     return res.data;
   } catch (err) {
     console.error("TMI 등록 실패", err);
