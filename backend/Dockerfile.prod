@@ -1,0 +1,10 @@
+FROM gradle:8.14-jdk17 AS build
+WORKDIR /tmi
+COPY . .
+RUN gradle clean build -x test
+
+FROM eclipse-temurin:17-jre-jammy
+WORKDIR /tmi
+COPY --from=build /tmi/build/libs/*.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "app.jar"]
