@@ -36,4 +36,9 @@ out/
 ### VS Code ###
 .vscode/
 
+### local ###
 application-local.yml
+Dockerfile.local
+
+### secret ###
+.env*
