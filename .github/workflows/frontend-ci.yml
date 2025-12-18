@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "frontend/**"
+  workflow_dispatch:
 
 jobs:
   build-frontend:
@@ -21,6 +22,6 @@ jobs:
 
       - name: Build & Push Frontend Image
         run: |
-          docker build --build-arg NEXT_PUBLIC_API_BASE_URL=http://15.165.160.251:8080/api \
+          docker build --build-arg NEXT_PUBLIC_API_BASE_URL=http://tmi-backend:8080/api \
             -f ./frontend/Dockerfile.prod -t ${{ secrets.DOCKERHUB_USERNAME }}/tmi-frontend:latest ./frontend
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/tmi-frontend:latest
