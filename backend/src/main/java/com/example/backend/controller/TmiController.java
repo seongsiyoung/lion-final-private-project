@@ -38,6 +38,6 @@ public class TmiController {
     //test용
     @GetMapping("/test")
     public ResponseEntity<String> test() {
-        return ResponseEntity.ok("수정된 cicd test");
+        return ResponseEntity.ok("cicd test");
     }
 }
