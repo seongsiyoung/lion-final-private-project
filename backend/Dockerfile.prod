@@ -1,7 +1,16 @@
 FROM gradle:8.14-jdk17 AS build
-WORKDIR /tmi
-COPY . .
-RUN gradle clean build -x test
+WORKDIR /app
+
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle settings.gradle ./
+
+RUN chmod +x ./gradlew
+
+COPY src src
+
+RUN ./gradlew clean build -x test --no-daemon
+
 
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /tmi
