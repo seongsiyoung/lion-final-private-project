@@ -1,5 +1,5 @@
 FROM gradle:8.14-jdk17 AS build
-WORKDIR /app
+WORKDIR /tmi
 
 COPY gradlew .
 COPY gradle gradle
